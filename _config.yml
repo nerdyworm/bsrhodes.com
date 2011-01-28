@@ -1,0 +1,17 @@
+source:      .
+destination: ./_site
+includes:    ./_includes
+
+pygments:    true
+markdown:    rdiscount
+permalink:   /:title.html
+
+base_url: http://bsrhodes.com
+#base_url: /
+description: ""
+root_desc: ""
+
+rdiscount:
+  extensions: []
+  
+exclude: ['README.markdown']

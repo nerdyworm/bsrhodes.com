@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<section id="distractions" class="container_10">
+  <article>
+    <section class="grid_3 group published_on">
+      {{page.date | date:'%B %d, %Y'}}
+    </section>
+    <section class="grid_7 group post">
+      <h2 class="title">{{page.title}}</h2>
+      <div class="content">
+        {{ content }}
+      </div>
+    </section>
+  </article>
+
+  <div class="grid_3">&nbsp;</div>
+  <div class="grid_3" style="margin-bottom: 1em">
+  {% if page.previous %}
+    <a href="{{page.previous.url}}" title="previous post">{{ page.previous.title | truncate: 30}}</a>
+  {% endif %}
+  </div>
+  <div class="grid_4" style="text-align: right; margin-bottom: 1em">
+  {% if page.next %}
+    <a href="{{page.next.url}}" title="next post">{{page.next.title  |truncate: 30}}</a>
+  {% endif %}
+  </div>
+
+</section>
