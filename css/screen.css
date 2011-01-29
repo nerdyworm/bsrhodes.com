@@ -58,8 +58,7 @@ header#site nav ul li {
 
 header#site nav ul li a {
   font-weight: bold;
-  text-align: center;
-  padding: 10px 12px;
+  margin-right: 25px;
 }
 
 header#site nav ul li a:hover {
@@ -77,6 +76,15 @@ section#distractions header {
 section#distractions article {
 }
 
+#notes {
+  margin-bottom: 1em;
+}
+
+.note .title {
+  margin-bottom: 5px;
+}
+
+.note .published_on,
 section#distractions article section.published_on {
   text-align: right;
   color: #ddd;
@@ -119,11 +127,12 @@ section#distractions article section.main header h2 {
   margin-bottom: 00px;
 }
 
-section#distractions article section.main header h2 a {
+.title a {
   color: #111111;
   text-decoration: none;
 }
 
+header p,
 section#distractions article section.main .content {
   font-family: Georgia, serif;
   font-size: 16px;
@@ -323,13 +332,16 @@ article.project h2 {
   margin-bottom: .25em; 
 }
 
-article.page,
+
+article.page p,
 article.project p, 
 .content {
   font-family: Georgia, serif;
   font-size: 16px;
   line-height: 1.7em;
 }
+
+
 
 .highlight  { font-size: 12px; line-height: 15px; }
 .highlight .hll { background-color: #ffffcc }

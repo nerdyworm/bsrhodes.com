@@ -1,0 +1,24 @@
+---
+layout: default
+title: Distractions - Benjamin Silas Rhodes
+---
+<br class="clear"/>
+<section id="notes" class="container_10 group">
+  <header class="prefix_3 grid_7 group">
+    <h1>My geek notes</h1>
+    <p>Listed bellow are the things that I  have found that may be helpful
+    to other folks searching for answers.</p>
+  </header>
+  <br class="clear"/>
+  {% for post in site.posts %}
+  <article class="note">
+    <section class="grid_3 group published_on">
+      {{post.date | date:'%B %d, %Y'}}
+    </section>
+    <section class="grid_7 group post">
+      <h2 class="title"><a href="{{post.url}}">{{post.title}}</a></h2>
+    </section>
+  </article>
+  {% endfor %}
+</section>
+<br class="clear"/>
