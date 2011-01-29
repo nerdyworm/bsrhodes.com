@@ -42,38 +42,76 @@
       <div class="grid_3"> 
         <div class="distractions"> 
           <h4>Distractions</h4> 
+
+          <div class="distraction">
+            <a href="http://www.joelonsoftware.com/articles/FogCreekMBACurriculum.html">Reading List: Fog Creek Software Managment Training Program</a>
+          </div>
           
-            <div class="distraction"> 
-              <span class="posted">
-                <a href="/distractions/Humble-Indie-Bundle">month ago</a>: 
-              </span> 
-              I wanted to post this to get as much attention on this project as possible.  Good games, good cause.  Go donate!
-              <a href="http://www.humblebundle.com/" style="text-decoration: none">link</a> 
-            </div> 
+          <div class="distraction">
+            <a href="http://www.ted.com/talks/lang/eng/ken_robinson_changing_education_paradigms.html">Ken Robinson: Changing education paradigms</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://www.ted.com/talks/thomas_thwaites_how_i_built_a_toaster_from_scratch.html">Thomas Thwaites: How I build a toaster</a>
+          </div> 
+
+          <div class="distraction">
+            <a href="http://itunes.apple.com/podcast/global-trance-grooves-john/id301295540">Global Trances Grooves Podcast</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://discovertrance.com">Discover Trance Raido</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://www.youtube.com/user/HuskyStarcraft">Husky Starcraft</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://coderloop.com/">Coderloop</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://dribbble.com/">Dribbble</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://day9tv.blip.tv/">Day9tv</a>
+          </div>
+          
+          <div class="distraction">
+            <a href="http://ww.reddit.com/">Reddit</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://www.ted.com/">Ted</a>
+          </div>
         </div> 
     </div> 
 
     <div class="grid_4"> 
-      <div class="projects"> 
-        <h4>Projects</h4> 
-        <a href="/projects" class="read_more"> Read more</a> 
-      </div>
-
+      
       <div class="about"> 
         <h4>About</h4> 
-        This site is my personal play toy on the internet. I like to develop strange new things on this site. 
-        <a href="/about" class="read_more"> Read more</a> 
+        This site is where I keep my notes.  I try to post the things that frustrate me and inspire me. 
+        <a href="/about.html" class="read_more"> Read more</a> 
       </div>
 
+      <div class="projects"> 
+        <h4>Currently Working On</h4> 
+        Private self cleaning read it laters, delivered.
+        <a href="http://readingtime.me/" class="read_more">http://readingtime.me</a> 
+      </div>
+
+
       <div class="reading group"> 
-        <h4> Currently Reading </h4> 
+        <h4>Currently Reading</h4> 
   
         <div style="float: left; width: 190px;"> 
         <em>Programing Clojure</em><br/> 
           Stuart Halloway
         </div> 
-        <img src="/assets/4c0af40b1768b9646f000001-100x130" style="border: 5px solid #2f2f2f;" alt="Programing Clojure by Stuart Halloway"/> 
-  
+        <img src="/images/books/clojure.png" style="border: 5px solid #2f2f2f;" alt="Programing Clojure by Stuart Halloway"/> 
       </div>  
     </div> 
 
@@ -83,8 +121,9 @@
         <a href="http://www.ted.com/talks/denis_dutton_a_darwinian_theory_of_beauty.html">Denis Dutton: A Darwinian theory of beauty</a> 
       </div> 
       <div class="bookmarks"> 
-        <h4> Delicious Bookmarks</h4> 
-        <ul id="delicious"></ul> 
+        <h4>Stuff I Just Read</h4> 
+        <ul id="readingtime"></ul>
+        <p>Share what you are reading at: <a href="http://readingtime.me">readingtime.me</a></p>
       </div> 
     </div> 
   </div> 
@@ -96,5 +135,15 @@
     </div> 
   </div> 
 </div> 
+<script>
+$(function() {
+  var limit = 5;
+  $.getJSON("http://readingtime.me/readers/4d43741f85cd402d2a000002/read.json?callback=?&limit=" + limit, function(data) {
+    for(var i = 0; i < limit; i++) {
+      $('<li><a href="' + data[i].url + '">' + data[i].url + '</a></li>').appendTo("#readingtime");
+    }
+  });
+});
+</script>
 </body> 
 </html>
