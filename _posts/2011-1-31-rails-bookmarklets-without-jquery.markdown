@@ -11,6 +11,7 @@ The purpose of this article is to explain how I created the bookmarklet for <a h
 The first thing to do is create a piece of javascript that will load in the javascript file that you want to execute on the page.
 
 {% highlight js %}
+//bookmarklet.js
 var s = document.createElement('script');
 s.setAttribute('language','javascript');
 s.setAttribute('src','http://example.com/js/bookmarklet.js');
@@ -26,6 +27,7 @@ I wanted to be able to render things inside my javascript file so I created a co
 
 
 {% highlight ruby %}
+#js_controller.rb
 class JsController < ApplicationController
   layout false
 
@@ -40,6 +42,7 @@ get "js/bookmarklet(.:format)" => "js#bookmarklet", :as => :bookmarklet
 Rails will take care of serving the proper file type with the format included in the route.  The view consists of a standard js.erb file listed bellow (excuse the extended long lines):
 
 {% highlight js %}
+//bookmarklet.js.erb
 (function() {
   function create_container(id) {
     var container = document.createElement("div");
