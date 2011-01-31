@@ -1,10 +1,3 @@
-To do:
+This is my personal website at bsrhodes.com.
 
-  Finish footer
-    Should incorporate todays reading list from reading time?
-
-  At reading time to projects
-
-
-  About page
-    I can write things about my self no one will give a shit
+Feel free to fork for your own purposes.
