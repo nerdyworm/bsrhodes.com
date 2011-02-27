@@ -5,7 +5,7 @@ set -e
 GIT_REPO=$HOME/Documents/Workspace/bsrhodes.com
 TMP_GIT_CLONE=$HOME/tmp/website
 PUBLIC_WWW=$HOME/.s3w3
-S3_BUCKET=bsrhodes.com
+S3_BUCKET=www.bsrhodes.com
 
 # setup s3
 s3fs $S3_BUCKET $PUBLIC_WWW -o use_rrs=1 -o default_acl=public-read
