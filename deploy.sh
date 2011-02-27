@@ -2,9 +2,9 @@
 
 set -e
 
-GIT_REPO=$HOME/website.git
+GIT_REPO=$HOME/Documents/Workspace/bsrhodes.com
 TMP_GIT_CLONE=$HOME/tmp/website
-PUBLIC_WWW=$HOME/s3w3
+PUBLIC_WWW=$HOME/.s3w3
 S3_BUCKET=bsrhodes.com
 
 # setup s3
