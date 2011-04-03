@@ -1,0 +1,220 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Mac Like Text Editing Keybinds</title> 
+  <link href="/css/960.css" media="screen" rel="stylesheet" type="text/css"/> 
+  <link href="/css/screen.css" media="screen" rel="stylesheet" type="text/css"/> 
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script> 
+  <script type="text/javascript" src="/js/fancyzoom.js"></script> 
+</head> 
+<body style="background: #111"> 
+  
+  <header id="site" class="group"> 
+    <div class="container_10 group"> 
+      <h1 class="grid_3"><a href="/">Benjamin Silas Rhodes</a></h1> 
+      <nav class="grid_4"> 
+        <ul> 
+          <li><a href="/about.html">About</a></li> 
+          <li><a href="/geek_notes.html">Geek Notes</a></li> 
+          <li><a href="/projects.html" class="last">Projects</a></li> 
+        </ul> 
+      </nav> 
+    </div> 
+  </header> 
+
+
+  <div style="background: #fff" class="group"> 
+    <br class="clear"/>
+<section id="distractions" class="container_10">
+  <article>
+    <section class="grid_3 group published_on">
+      March 01, 2010
+    </section>
+    <section class="grid_7 group post">
+      <h2 class="title">Mac Like Text Editing Keybinds</h2>
+      <div class="content">
+        <p>When switching to ubuntu 10.04 I ran into something that made me uncomfortable, no alt+left and alt+right to skip between words.</p>
+
+<p>It took a decent amount of googling but I finally found a solution to the problem on the <a href="http://ubuntuforums.org/showthread.php?p=7522446">ubuntu forums</a>.</p>
+
+<div class="highlight"><pre><code class="sh"><span class="c"># /usr/share/themes/Mac/gtk-2.0-key/gtkr</span>
+<span class="c"># Mac-like text editing keybindings</span>
+
+binding <span class="s2">&quot;gtk-mac-text-entry&quot;</span>
+<span class="o">{</span>
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;ctrl&gt;Left&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>display-line-ends, -1, 0<span class="o">)</span> <span class="o">}</span>
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;shift&gt;&lt;ctrl&gt;Left&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>display-line-ends, -1, 1<span class="o">)</span> <span class="o">}</span>
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;ctrl&gt;Right&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>display-line-ends, 1, 0<span class="o">)</span> <span class="o">}</span>
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;shift&gt;&lt;ctrl&gt;Right&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>display-line-ends, 1, 1<span class="o">)</span> <span class="o">}</span>
+
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;ctrl&gt;Up&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>buffer-ends, -1, 0<span class="o">)</span> <span class="o">}</span>
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;shift&gt;&lt;ctrl&gt;Up&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>buffer-ends, -1, 1<span class="o">)</span> <span class="o">}</span>
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;ctrl&gt;Down&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>buffer-ends, 1, 0<span class="o">)</span> <span class="o">}</span>
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;shift&gt;&lt;ctrl&gt;Down&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>buffer-ends, 1, 1<span class="o">)</span> <span class="o">}</span>
+
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;alt&gt;Left&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>words, -1, 0<span class="o">)</span> <span class="o">}</span>
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;shift&gt;&lt;alt&gt;Left&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>words, -1, 1<span class="o">)</span> <span class="o">}</span>
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;alt&gt;Right&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>words, 1, 0<span class="o">)</span> <span class="o">}</span>
+  <span class="nb">bind</span> <span class="s2">&quot;&lt;shift&gt;&lt;alt&gt;Right&quot;</span> <span class="o">{</span> <span class="s2">&quot;move-cursor&quot;</span> <span class="o">(</span>words, 1, 1<span class="o">)</span> <span class="o">}</span>
+<span class="o">}</span>
+
+class <span class="s2">&quot;GtkEntry&quot;</span> binding <span class="s2">&quot;gtk-mac-text-entry&quot;</span>
+class <span class="s2">&quot;GtkTextView&quot;</span> binding <span class="s2">&quot;gtk-mac-text-entry&quot;</span>
+</code></pre>
+</div>
+
+
+<p>Run the <span style="font-family: monospace">gconf-editor</span> command from a terminal and set the value of /desktop/gnome/interface/gtk_key_theme to “Mac.” The Mac correspond the the theme folder you placed your gtkr file in.</p>
+
+<p>Enjoy your mac like text editing!</p>
+
+<p>Once again thanks to dansmith of the ubuntu forums.</p>
+
+      </div>
+    </section>
+  </article>
+  <div class="grid_3">&nbsp;</div>
+  <div class="grid_3" style="margin-bottom: 1em">
+  
+    <a href="/capistrano-symlink-shared-resources.html" title="previous post">Capistrano: Symlink shared ...</a>
+  
+  </div>
+  <div class="grid_4" style="text-align: right; margin-bottom: 1em">
+  
+    <a href="/rails-bookmarklets-without-jquery.html" title="next post">Rails Bookmarklets without ...</a>
+  
+  </div>
+</section>
+<br class="clear"/>  
+
+  </div>
+ 
+  <div id="cap" class="group"> 
+    <div class="container_10 group"> 
+      <div class="grid_10"> 
+        &nbsp;
+      </div> 
+    </div> 
+  </div> 
+  
+  <footer id="site" class="group"> 
+    <div class="container_10 group"> 
+      <div class="grid_3"> 
+        <div class="distractions"> 
+          <h4>Distractions</h4> 
+
+          <div class="distraction">
+            <a href="http://www.joelonsoftware.com/articles/FogCreekMBACurriculum.html">Reading List: Fog Creek Software Managment Training Program</a>
+          </div>
+          
+          <div class="distraction">
+            <a href="http://www.ted.com/talks/lang/eng/ken_robinson_changing_education_paradigms.html">Ken Robinson: Changing education paradigms</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://www.ted.com/talks/thomas_thwaites_how_i_built_a_toaster_from_scratch.html">Thomas Thwaites: How I build a toaster</a>
+          </div> 
+
+          <div class="distraction">
+            <a href="http://itunes.apple.com/podcast/global-trance-grooves-john/id301295540">Global Trances Grooves Podcast</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://discovertrance.com">Discover Trance Raido</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://www.youtube.com/user/HuskyStarcraft">Husky Starcraft</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://coderloop.com/">Coderloop</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://dribbble.com/">Dribbble</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://day9tv.blip.tv/">Day9tv</a>
+          </div>
+          
+          <div class="distraction">
+            <a href="http://ww.reddit.com/">Reddit</a>
+          </div>
+
+          <div class="distraction">
+            <a href="http://www.ted.com/">Ted</a>
+          </div>
+        </div> 
+    </div> 
+
+    <div class="grid_4"> 
+      
+      <div class="about"> 
+        <h4>About</h4> 
+        This site is where I keep my notes.  I try to post the things that frustrate me and inspire me. 
+        <a href="/about.html" class="read_more"> Read more</a> 
+      </div>
+
+      <div class="projects"> 
+        <h4>Currently Working On</h4> 
+        Boxed mobile, mobile web hosting done right.
+        <a href="http://boxedmobile.com/" class="read_more">http://boxedmobile.com</a> 
+      </div>
+
+
+      <div class="reading group"> 
+        <h4>Currently Reading</h4> 
+  
+        <div style="float: left; width: 190px;"> 
+        <em>Programing Clojure</em><br/> 
+          Stuart Halloway
+        </div> 
+        <img src="/images/books/clojure.png" style="border: 5px solid #2f2f2f;" alt="Programing Clojure by Stuart Halloway"/> 
+      </div>  
+    </div> 
+
+    <div class="grid_3"> 
+      <div class="inspiration"> 
+        <h4>Inspiration</h4> 
+        <a href="http://www.ted.com/talks/denis_dutton_a_darwinian_theory_of_beauty.html">Denis Dutton: A Darwinian theory of beauty</a> 
+      </div> 
+      <div class="bookmarks"> 
+        <h4>Stuff I Just Read</h4> 
+        <ul id="readingtime"></ul>
+        <p>Share what you are reading at: <a href="http://readingtime.me">readingtime.me</a></p>
+      </div> 
+    </div> 
+  </div> 
+</footer> 
+<div id="endcap" class="group"> 
+  <div class="container_10 group"> 
+    <div class="grid_3"> 
+      2010 Benjamin Silas Rhodes
+    </div> 
+  </div> 
+</div> 
+<script>
+$(function() {
+  var limit = 5;
+  $.getJSON("http://readingtime.me/readers/4d43741f85cd402d2a000002/read.json?callback=?&limit=" + limit, function(data) {
+    for(var i = 0; i < limit; i++) {
+      $('<li><a href="' + data[i].url + '">' + data[i].url + '</a></li>').appendTo("#readingtime");
+    }
+  });
+});
+</script>
+<script type="text/javascript"> 
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12681877-1']);
+    _gaq.push(['_trackPageview']);
+ 
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script> 
+</body> 
+</html>
