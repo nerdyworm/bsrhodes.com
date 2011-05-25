@@ -13,5 +13,5 @@ root_desc: ""
 
 rdiscount:
   extensions: []
-  
+
 exclude: ['README.markdown']
